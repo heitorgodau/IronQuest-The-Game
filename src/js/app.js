@@ -12,7 +12,7 @@ window.addEventListener('keydown', event =>  {
 const animate = () => {
   clear();
   hero.drawHero();
-  offscreenBuffering.drawHero()
+  hero.drawHero()
   window.requestAnimationFrame(animate);
 }
 
