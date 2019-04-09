@@ -1,12 +1,12 @@
 const gameScreen = document.getElementById('game-screen');
 const ctx = gameScreen.getContext('2d');
 const clear = () => ctx.clearRect(0,0, gameScreen.width, gameScreen.height);
-const bgSound = new Audio('src/audio/bg-sound1.mp3');
+const gameOverSound = new Audio('src/audio/geme-over.mp3')
+const bgSound = new Audio('src/audio/bg-sound2.mp3');
 const heroAttackSound = new Audio('src/audio/hero-attack.mp3');
 const bugAttackSound = new Audio('src/audio/bug-attack.mp3');
 const bugDiedSound = new Audio('src/audio/bug-died.mp3');
 const bugFleeSound = new Audio('src/audio/bug-flee.mp3');
-const gameOverSound = new Audio('src/audio/game-over-dois.mp3');
 //bgSound.play();
 
 let frames = 0;
@@ -44,6 +44,7 @@ const resetGame = () => {
 }
 
 const gameOver = () => {
+  bgSound.pause();
   gameOverSound.play();
   pause = true;
   clear();
