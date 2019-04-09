@@ -1,6 +1,7 @@
 body{
   text-align: center;
+  margin-top: 5%;
 }
 #game-screen{
-  background-color: #CAFE48;
+  background:url(../img/Grass_01.png) center top;
 }

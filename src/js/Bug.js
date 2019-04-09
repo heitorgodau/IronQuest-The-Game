@@ -2,8 +2,9 @@ const bugStore = []
 
 class Bug{
   constructor(){
-    this.img = `#${Math.floor(Math.random() * 16777216).toString(16)}`;
-    this.size = 25;
+    this.img = new Image();
+    this.color = `#${Math.floor(Math.random() * 16777216).toString(16)}`;
+    this.size = 50;
     this.posX = Math.floor(Math.random() * (gameScreen.width - this.size));
     this.posY = 0 - this.size * 2;
     this.hp = 15;
@@ -12,11 +13,9 @@ class Bug{
   }
   draw(){
     this.posY += this.speed;
-    ctx.fillStyle = this.img;
-    ctx.beginPath();
-    ctx.arc(this.posX, this.posY, this.size, 0, Math.PI*2);
-    ctx.fill();
-    ctx.closePath();
+    ctx.fillStyle = this.color;
+    this.img.src = 'src/img/spotted-bug.png'
+    ctx.drawImage(this.img, this.posX, this.posY, this.size, this.size)
   }
 }
 

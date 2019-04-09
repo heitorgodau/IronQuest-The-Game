@@ -1,7 +1,7 @@
 class Hero{
   constructor(name){
     this.name = name;
-    this.img = 'red';
+    this.img = new Image();
     this.size = 50;
     this.posX = (gameScreen.width/2) - this.size/2;
     this.posY = (gameScreen.height/2) - this.size/2;
@@ -10,8 +10,8 @@ class Hero{
     this.speed = this.size/2;
   }
   drawHero(){
-    ctx.fillStyle = this.img;
-    ctx.fillRect(this.posX, this.posY, this.size, this.size);
+    this.img.src = 'src/img/hero.png';
+    ctx.drawImage(this.img,this.posX, this.posY, this.size, this.size);
   }
   speedUp(e){
     e.shiftKey ? this.speed = this.size : this.speed = this.size/2;
