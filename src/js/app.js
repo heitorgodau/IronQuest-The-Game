@@ -44,7 +44,6 @@ const resetGame = () => {
 }
 
 const gameOver = () => {
-  bgSound.pause();
   gameOverSound.play();
   pause = true;
   clear();

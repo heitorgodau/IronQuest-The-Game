@@ -1,7 +1,120 @@
-body{
-  text-align: center;
-  margin-top: 5%;
+h1,h2{
+  font-family: "Indie Flower", cursive;
 }
+
+h1{
+  font-size: 1.7em;
+  color: tomato;
+  letter-spacing: .2em;
+  text-align: center;
+  font-weight: 900;
+}
+
+h2{
+  font-size: 1em;
+  color: darkcyan;
+  margin: 10px 0;
+}
+span{
+  font-weight: 900;
+  color: blueviolet;
+}
+#game{
+  display: flex;
+}
+.instructions{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 1em;
+}
+
+.instructions .box{
+  display: flex;
+  margin-right: 15px;
+  align-items: center;
+  height: fit-content;
+  margin-bottom: 30px;
+}
+.instructions .icons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+  width: 70px;
+}
+
+.instructions .icons .fas{
+  font-size: 1.5em;
+  color: tomato
+}
+
+.instructions .icons .fa-keyboard{
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.instructions .icons .fa-pause-circle{
+  color: chartreuse;
+}
+
+.instructions .icons .fa-ghost{
+  color: darkgoldenrod;
+}
+
+.instructions .text{
+  font-family: "Indie Flower", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.arrows{
+  position: relative;
+  width: 70px;
+  height: 60px;
+}
+
+.fa-arrow-circle-up:before,
+.fa-arrow-circle-down:before,
+.fa-arrow-circle-left:before,
+.fa-arrow-circle-right:before{
+  position: absolute;
+  color: dodgerblue;
+}
+
+.fa-arrow-circle-up:before,
+.fa-arrow-circle-down:before{
+  left: calc( 50% - 12px);
+}
+
+.fa-arrow-circle-left:before,
+.fa-arrow-circle-right:before{
+  top: calc( 50% - 12px );
+}
+
+.fa-arrow-circle-up:before{
+  top: 0;
+  
+}
+
+.fa-arrow-circle-down:before{
+  bottom: 0;
+}
+
+.fa-arrow-circle-left:before{
+  left: 0;
+}
+
+.fa-arrow-circle-right:before{
+  right: 0;
+}
+
+.text.text-arrows h2{
+  margin: 0 0 10px;
+}
+
 #game-screen{
   background:url(../img/Grass_01.png) center top;
 }
