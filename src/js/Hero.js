@@ -8,6 +8,17 @@ class Hero{
     this.hp = 15;
     this.str = this.hp/3;
     this.speed = this.size/2;
+    this.score = 0
+  }
+  getScore(){
+    ctx.font = '30px Impact'
+    ctx.fillStyle = '#72BF8C'
+    ctx.fillText(`Score: ${this.score}`, 180, 40)    
+  }
+  getHP(){
+    ctx.font = '30px Impact'
+    ctx.fillStyle = 'tomato'
+    ctx.fillText(`HP: ${this.hp}pts`, 20, 40)
   }
   drawHero(){
     this.img.src = 'src/img/hero.png';
@@ -36,10 +47,7 @@ class Hero{
   heroHit(enemy){
     return (this.posX < enemy.posX + enemy.size) && (this.posX + this.size > enemy.posX) && (this.posY < enemy.posY + enemy.size) && (this.posY + this.size > enemy.posY);
   }
-  attack(e){
-    if(e.keyCode === 17){
-      console.log('CTRL')
-      enemy.hp -= this.str;
-    }
+  attack(enemy){
+    return (this.posX - this.size / 2 < enemy.posX + enemy.size) && (this.posX + this.size * 1.5 > enemy.posX) && (this.posY - this.size / 2 < enemy.posY + enemy.size) && (this.posY + this.size * 1.5 > enemy.posY);
   }
 }

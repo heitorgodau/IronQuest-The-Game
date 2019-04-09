@@ -29,6 +29,7 @@ const drawBugs = () => bugStore.forEach( enemy => enemy.draw());
 
 const clearBugs = () => bugStore.forEach(enemy => {
   if(enemy.posY === 600){
+    hero.score -= 50;
     bugStore.shift();
   }
 });
@@ -40,6 +41,19 @@ const bugHit = () => {
       hero.posY < 400 ? hero.posY += 100 : hero.posX += 100;
       if(hero.hp <= 0){
         gameOver();
+      }
+    }
+  })
+}
+
+const bugDamage = () => {
+  bugStore.forEach((enemy, i) => {
+    if(hero.attack(enemy)) {
+      hero.score += 200;
+      enemy.hp -= hero.str;
+      enemy.posY -= 100;
+      if(enemy.hp <= 0){
+        bugStore.splice(i,1);
       }
     }
   })
