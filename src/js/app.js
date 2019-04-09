@@ -4,26 +4,22 @@ const clear = () => ctx.clearRect(0,0, gameScreen.width, gameScreen.height);
 
 let frames = 0;
 let hero = new Hero('Iron');
-let bugs = new Bug();
 
 window.addEventListener('keydown', event =>  {
   hero.moveHero(event)
   hero.speedUp(event);
+  hero.attack(event);
 });
 
-const createBugs = () => {
-  if(frames % 120 === 0){
-    bugStore.push(new Bug);
-  }
-};
-
-const drawBugs = () => bugStore.forEach( enemy => enemy.draw());
+const gameOver = () => console.log(gameOver);
 
 const animate = () => {
   clear();
   hero.drawHero();
   createBugs();
   drawBugs();
+  clearBugs();
+  bugHit();
   frames += 1;
   window.requestAnimationFrame(animate);
 }

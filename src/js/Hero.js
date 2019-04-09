@@ -33,4 +33,13 @@ class Hero{
         break;
     }
   }
+  heroHit(enemy){
+    return (this.posX < enemy.posX + enemy.size) && (this.posX + this.size > enemy.posX) && (this.posY < enemy.posY + enemy.size) && (this.posY + this.size > enemy.posY);
+  }
+  attack(e){
+    if(e.keyCode === 17){
+      console.log('CTRL')
+      enemy.hp -= this.str;
+    }
+  }
 }

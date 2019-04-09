@@ -19,3 +19,29 @@ class Bug{
     ctx.closePath();
   }
 }
+
+const createBugs = () => {
+  if(frames % 120 === 0){
+    bugStore.push(new Bug);
+  }
+};
+
+const drawBugs = () => bugStore.forEach( enemy => enemy.draw());
+
+const clearBugs = () => bugStore.forEach(enemy => {
+  if(enemy.posY === 600){
+    bugStore.shift();
+  }
+});
+
+const bugHit = () => {
+  bugStore.forEach(enemy => {
+    if(hero.heroHit(enemy)) {
+      hero.hp -= enemy.str;
+      hero.posY < 400 ? hero.posY += 100 : hero.posX += 100;
+      if(hero.hp <= 0){
+        gameOver();
+      }
+    }
+  })
+}
