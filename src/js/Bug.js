@@ -31,12 +31,14 @@ const clearBugs = () => bugStore.forEach(enemy => {
   if(enemy.posY === 600){
     hero.score -= 50;
     bugStore.shift();
+    bugFleeSound.play();
   }
 });
 
 const bugHit = () => {
   bugStore.forEach(enemy => {
     if(hero.heroHit(enemy)) {
+      bugAttackSound.play();
       hero.hp -= enemy.str;
       hero.posY < 400 ? hero.posY += 100 : hero.posX += 100;
       if(hero.hp <= 0){
@@ -49,11 +51,14 @@ const bugHit = () => {
 const bugDamage = () => {
   bugStore.forEach((enemy, i) => {
     if(hero.attack(enemy)) {
-      hero.score += 200;
+      heroAttackSound.play();
+      hero.score += 100;
       enemy.hp -= hero.str;
       enemy.posY -= 100;
       if(enemy.hp <= 0){
         bugStore.splice(i,1);
+        hero.score += 200
+        bugDiedSound.play();
       }
     }
   })
