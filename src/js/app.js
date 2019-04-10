@@ -68,6 +68,7 @@ const animate = () => {
     drawBugs();
     clearBugs();
     bugHit();
+    bugLifeBar();
     hero.getHP();
     hero.getScore();
     bgSound.play();

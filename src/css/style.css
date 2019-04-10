@@ -8,16 +8,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  overflow: hidden;
+}
+
+.title{
+  font-family: 'Pixel';
+  text-transform: uppercase;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
 
 .title h1{
-  font-family: 'Pixel';
-  font-size: 1.7em;
-  color: #33ff33;
+  font-size: 1.5em;
   letter-spacing: .2em;
-  text-align: center;
-  font-weight: 900;
+}
+.title p{
+  font-size: .5em;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  align-self: flex-start;
 }
 
 h2{

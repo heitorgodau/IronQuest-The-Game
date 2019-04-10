@@ -6,10 +6,11 @@ class Hero{
     this.posX = (gameScreen.width/2) - this.size/2;
     this.posY = (gameScreen.height/2) - this.size/2;
     this.hp = 15;
-    this.str = this.hp/3;
+    this.str = 20;
     this.speed = this.size/2;
     this.score = 0
-    this.attackImg = new Image();
+    //this.attackImg = new Image();
+    this.direction = 'up'
   }
   getScore(){
     ctx.font = '30px Impact'
@@ -22,8 +23,21 @@ class Hero{
     ctx.fillText(`HP: ${this.hp}pts`, 20, 40)
   }
   drawHero(){
-    this.img.src = 'src/img/hero.png';
-    ctx.drawImage(this.img,this.posX, this.posY, this.size, this.size);
+    this.img.src = 'src/img/hero-positions.png';
+    switch(this.direction){
+      case 'up':
+        ctx.drawImage(this.img, 96, 0, 32, 32, this.posX, this.posY, this.size, this.size);
+        break;
+      case 'right':
+        ctx.drawImage(this.img, 64, 0, 32, 32, this.posX, this.posY, this.size, this.size);
+        break;
+      case 'down':
+        ctx.drawImage(this.img, 0, 0, 32, 32, this.posX, this.posY, this.size, this.size);        
+        break;
+      case 'left':
+        ctx.drawImage(this.img, 32, 0, 32, 32, this.posX, this.posY, this.size, this.size);
+        break;
+    }
   }
   speedUp(e){
     e.shiftKey ? this.speed = this.size : this.speed = this.size/2;
@@ -33,15 +47,19 @@ class Hero{
     switch(e.keyCode){
       case 37:
         this.posX > 0 ? this.posX -= this.speed : this.posX = 0;
+        this.direction = 'left';
         break;
       case 38:
         this.posY > 0 ? this.posY -= this.speed : this.posY = 0;
+        this.direction = 'up';
         break;
       case 39:
         this.posX < 750 ? this.posX += this.speed : this.posX = 750;
+        this.direction = 'right';
         break;
       case 40:
         this.posY < 450 ? this.posY += this.speed : this.posY = 450;
+        this.direction = 'down';
         break;
     }
   }

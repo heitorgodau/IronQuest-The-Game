@@ -6,8 +6,8 @@ class Bug{
     this.size = 50;
     this.posX = Math.floor(Math.random() * (gameScreen.width - this.size));
     this.posY = 0 - this.size * 2;
-    this.hp = 15;
-    this.str = this.hp/3;
+    this.hp = 50;
+    this.str = 5;
     this.speed = 1;
   }
   draw(){
@@ -19,8 +19,14 @@ class Bug{
 }
 
 const createBugs = () => {
-  if(frames % 120 === 0){
-    bugStore.push(new Bug);
+  if(hero.score < 2000){
+    if(frames % 120 === 0){
+      bugStore.push(new Bug);
+    }
+  }else{
+    if(frames % 60 === 0){
+      bugStore.push(new Bug);
+    }
   }
 };
 
@@ -59,6 +65,17 @@ const bugDamage = () => {
         hero.score += 200
         bugDiedSound.play();
       }
+    }
+  })
+}
+
+const bugLifeBar = () => {
+  bugStore.forEach(enemy => {
+    ctx.strokeStyle = 'white';
+    ctx.strokeRect(enemy.posX, enemy.posY - 20, 50, 10);
+    ctx.fillStyle = 'red';
+    for(let i = 0; i < enemy.hp; i += 1){
+      ctx.fillRect(enemy.posX + i, enemy.posY - 19, 1, 8 );
     }
   })
 }
