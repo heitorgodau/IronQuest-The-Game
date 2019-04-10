@@ -1,16 +1,27 @@
-h1,h2{
-  font-family: "Indie Flower", cursive;
+@font-face{
+  font-family: 'Pixel';
+  src: url(../fonts/Pixeled.ttf);
 }
 
-h1{
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title h1{
+  font-family: 'Pixel';
   font-size: 1.7em;
-  color: tomato;
+  color: #33ff33;
   letter-spacing: .2em;
   text-align: center;
   font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
 h2{
+  font-family: "Indie Flower", cursive;
   font-size: 1em;
   color: darkcyan;
   margin: 10px 0;
@@ -35,7 +46,7 @@ span{
   margin-right: 15px;
   align-items: center;
   height: fit-content;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .instructions .icons{
   display: flex;
@@ -61,6 +72,10 @@ span{
 
 .instructions .icons .fa-ghost{
   color: darkgoldenrod;
+}
+
+.instructions .icons .fa-tachometer-alt{
+  color: darkorange;
 }
 
 .instructions .text{

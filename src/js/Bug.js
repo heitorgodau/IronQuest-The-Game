@@ -3,7 +3,6 @@ const bugStore = []
 class Bug{
   constructor(){
     this.img = new Image();
-    this.color = `#${Math.floor(Math.random() * 16777216).toString(16)}`;
     this.size = 50;
     this.posX = Math.floor(Math.random() * (gameScreen.width - this.size));
     this.posY = 0 - this.size * 2;

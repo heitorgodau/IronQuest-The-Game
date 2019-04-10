@@ -9,6 +9,7 @@ class Hero{
     this.str = this.hp/3;
     this.speed = this.size/2;
     this.score = 0
+    this.attackImg = new Image();
   }
   getScore(){
     ctx.font = '30px Impact'
@@ -50,4 +51,13 @@ class Hero{
   attack(enemy){
     return (this.posX - this.size / 2 < enemy.posX + enemy.size) && (this.posX + this.size * 1.5 > enemy.posX) && (this.posY - this.size / 2 < enemy.posY + enemy.size) && (this.posY + this.size * 1.5 > enemy.posY);
   }
+  /* attackAnimation(){
+     let x = 0;
+     this.attackImg.src = 'src/img/attack-sprite-sheet.png';
+     while( x <= 300 ){
+       clear();
+       ctx.drawImage(this.attackImg, x, 0, 50, 50, this.posX, this.posY, 50, 50);
+       x += 50;
+     }
+   }*/
 }
