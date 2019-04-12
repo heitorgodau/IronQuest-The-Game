@@ -11,7 +11,6 @@ let frames = 0;
 let pause = true;
 let hero = new Hero('Iron');
 
-
 window.addEventListener('keydown', event =>  {
   hero.moveHero(event)
   hero.speedUp(event);
@@ -59,7 +58,7 @@ const gameOver = () => {
   resetGame();
 };
 
-
+////////ENGINE
 const animate = () => {
   if(pause === false){
     clear();
