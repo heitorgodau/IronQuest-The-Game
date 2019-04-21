@@ -1,6 +1,7 @@
 # IronQuest - The Biggest Adventure
 > "IronQuest" is a game build in HTML canvas, CSS and Javascript.
 > This game is in beta version 1.2.1
+> TLDR: https://heitorgodau.github.io/IronQuest-The-Game/
 
 ![](src/img/game-screen.png)
 ![](src/img/screenshot-canvas.png)
