@@ -26,7 +26,7 @@ Instructions to play this game:
 
 ## Release History
 
-*1.2.2
+* 1.2.2
     * CHANGE: Text font inside the game was alterated
 * 1.2.1
     * CHANGE: Minor bugs fixed
